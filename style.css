@@ -1,0 +1,29 @@
+
+h1 {
+  font: 20px Arial;
+  text-align: center;
+}
+
+#gameBoard {
+  margin: 0 auto;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+table input {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+.solveButton {
+  width: 100px;
+  text-align: center;
+}
