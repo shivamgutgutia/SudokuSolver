@@ -1,134 +1,143 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Sudoku solver</title>
-  <link rel="stylesheet" href="./style.css">
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Sudoku solver</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <div id="container">
+            <h1>Sudoku Solver</h1>
 
-</head>
-<body>
-<h1> Sudoku Solver </h1>
+            <div id="gameBoard">
+                <table id="table">
+                    <tbody>
+                        <tr id="row">
+                            <td><input type="text" id="00" value="" /></td>
+                            <td><input type="text" id="01" value="" /></td>
+                            <td><input type="text" id="02" value="" /></td>
+                            <td><input type="text" id="03" value="" /></td>
+                            <td><input type="text" id="04" value="" /></td>
+                            <td><input type="text" id="05" value="" /></td>
+                            <td><input type="text" id="06" value="" /></td>
+                            <td><input type="text" id="07" value="" /></td>
+                            <td><input type="text" id="08" value="" /></td>
+                        </tr>
 
-<div id="gameBoard">
-  <table id="table">
-    <tr id="row">
-      <td><input type="text" id="00" value=""></td>
-      <td><input type="text" id="01" value=""></td>
-      <td><input type="text" id="02" value=""></td>
-      <td><input type="text" id="03" value=""></td>
-      <td><input type="text" id="04" value=""></td>
-      <td><input type="text" id="05" value=""></td>
-      <td><input type="text" id="06" value=""></td>
-      <td><input type="text" id="07" value=""></td>
-      <td><input type="text" id="08" value=""></td>
-    </tr>
-    
-    <tr id="row">
-      <td><input type="text" id="10" value=""></td>
-      <td><input type="text" id="11" value=""></td>
-      <td><input type="text" id="12" value=""></td>
-      <td><input type="text" id="13" value=""></td>
-      <td><input type="text" id="14" value=""></td>
-      <td><input type="text" id="15" value=""></td>
-      <td><input type="text" id="16" value=""></td>
-      <td><input type="text" id="17" value=""></td>
-      <td><input type="text" id="18" value=""></td>
-    </tr>
-    
-    <tr id="row">
-      <td><input type="text" id="20" value=""></td>
-      <td><input type="text" id="21" value=""></td>
-      <td><input type="text" id="22" value=""></td>
-      <td><input type="text" id="23" value=""></td>
-      <td><input type="text" id="24" value=""></td>
-      <td><input type="text" id="25" value=""></td>
-      <td><input type="text" id="26" value=""></td>
-      <td><input type="text" id="27" value=""></td>
-      <td><input type="text" id="28" value=""></td>
-    </tr>
-    
-    <tr id="row">
-      <td><input type="text" id="30" value=""></td>
-      <td><input type="text" id="31" value=""></td>
-      <td><input type="text" id="32" value=""></td>
-      <td><input type="text" id="33" value=""></td>
-      <td><input type="text" id="34" value=""></td>
-      <td><input type="text" id="35" value=""></td>
-      <td><input type="text" id="36" value=""></td>
-      <td><input type="text" id="37" value=""></td>
-      <td><input type="text" id="38" value=""></td>
-    </tr>
-    
-    <tr id="row">
-      <td><input type="text" id="40" value=""></td>
-      <td><input type="text" id="41" value=""></td>
-      <td><input type="text" id="42" value=""></td>
-      <td><input type="text" id="43" value=""></td>
-      <td><input type="text" id="44" value=""></td>
-      <td><input type="text" id="45" value=""></td>
-      <td><input type="text" id="46" value=""></td>
-      <td><input type="text" id="47" value=""></td>
-      <td><input type="text" id="48" value=""></td>
-    </tr>
-    
-    <tr id="row">
-      <td><input type="text" id="50" value=""></td>
-      <td><input type="text" id="51" value=""></td>
-      <td><input type="text" id="52" value=""></td>
-      <td><input type="text" id="53" value=""></td>
-      <td><input type="text" id="54" value=""></td>
-      <td><input type="text" id="55" value=""></td>
-      <td><input type="text" id="56" value=""></td>
-      <td><input type="text" id="57" value=""></td>
-      <td><input type="text" id="58" value=""></td>
-    </tr>
-    
-    <tr id="row">
-      <td><input type="text" id="60" value=""></td>
-      <td><input type="text" id="61" value=""></td>
-      <td><input type="text" id="62" value=""></td>
-      <td><input type="text" id="63" value=""></td>
-      <td><input type="text" id="64" value=""></td>
-      <td><input type="text" id="65" value=""></td>
-      <td><input type="text" id="66" value=""></td>
-      <td><input type="text" id="67" value=""></td>
-      <td><input type="text" id="68" value=""></td>
-    </tr>
-    
-    <tr id="row">
-      <td><input type="text" id="70" value=""></td>
-      <td><input type="text" id="71" value=""></td>
-      <td><input type="text" id="72" value=""></td>
-      <td><input type="text" id="73" value=""></td>
-      <td><input type="text" id="74" value=""></td>
-      <td><input type="text" id="75" value=""></td>
-      <td><input type="text" id="76" value=""></td>
-      <td><input type="text" id="77" value=""></td>
-      <td><input type="text" id="78" value=""></td>
-    </tr>
-    
-    <tr id="row">
-      <td><input type="text" id="80" value=""></td>
-      <td><input type="text" id="81" value=""></td>
-      <td><input type="text" id="82" value=""></td>
-      <td><input type="text" id="83" value=""></td>
-      <td><input type="text" id="84" value=""></td>
-      <td><input type="text" id="85" value=""></td>
-      <td><input type="text" id="86" value=""></td>
-      <td><input type="text" id="87" value=""></td>
-      <td><input type="text" id="88" value=""></td>
-    </tr>
-    
-    
-  </table>
-</div>
+                        <tr id="row">
+                            <td><input type="text" id="10" value="" /></td>
+                            <td><input type="text" id="11" value="" /></td>
+                            <td><input type="text" id="12" value="" /></td>
+                            <td><input type="text" id="13" value="" /></td>
+                            <td><input type="text" id="14" value="" /></td>
+                            <td><input type="text" id="15" value="" /></td>
+                            <td><input type="text" id="16" value="" /></td>
+                            <td><input type="text" id="17" value="" /></td>
+                            <td><input type="text" id="18" value="" /></td>
+                        </tr>
 
-<p>
-  <input type="button" value="Solve" id="solveButton" onclick="solve()">
-  <input type="button" value="Lock" id="lockButton" onclick="lock()">
- 
-</p>
-<script  src="./script.js"></script>
+                        <tr id="row">
+                            <td><input type="text" id="20" value="" /></td>
+                            <td><input type="text" id="21" value="" /></td>
+                            <td><input type="text" id="22" value="" /></td>
+                            <td><input type="text" id="23" value="" /></td>
+                            <td><input type="text" id="24" value="" /></td>
+                            <td><input type="text" id="25" value="" /></td>
+                            <td><input type="text" id="26" value="" /></td>
+                            <td><input type="text" id="27" value="" /></td>
+                            <td><input type="text" id="28" value="" /></td>
+                        </tr>
 
-</body>
+                        <tr id="row">
+                            <td><input type="text" id="30" value="" /></td>
+                            <td><input type="text" id="31" value="" /></td>
+                            <td><input type="text" id="32" value="" /></td>
+                            <td><input type="text" id="33" value="" /></td>
+                            <td><input type="text" id="34" value="" /></td>
+                            <td><input type="text" id="35" value="" /></td>
+                            <td><input type="text" id="36" value="" /></td>
+                            <td><input type="text" id="37" value="" /></td>
+                            <td><input type="text" id="38" value="" /></td>
+                        </tr>
+
+                        <tr id="row">
+                            <td><input type="text" id="40" value="" /></td>
+                            <td><input type="text" id="41" value="" /></td>
+                            <td><input type="text" id="42" value="" /></td>
+                            <td><input type="text" id="43" value="" /></td>
+                            <td><input type="text" id="44" value="" /></td>
+                            <td><input type="text" id="45" value="" /></td>
+                            <td><input type="text" id="46" value="" /></td>
+                            <td><input type="text" id="47" value="" /></td>
+                            <td><input type="text" id="48" value="" /></td>
+                        </tr>
+
+                        <tr id="row">
+                            <td><input type="text" id="50" value="" /></td>
+                            <td><input type="text" id="51" value="" /></td>
+                            <td><input type="text" id="52" value="" /></td>
+                            <td><input type="text" id="53" value="" /></td>
+                            <td><input type="text" id="54" value="" /></td>
+                            <td><input type="text" id="55" value="" /></td>
+                            <td><input type="text" id="56" value="" /></td>
+                            <td><input type="text" id="57" value="" /></td>
+                            <td><input type="text" id="58" value="" /></td>
+                        </tr>
+
+                        <tr id="row">
+                            <td><input type="text" id="60" value="" /></td>
+                            <td><input type="text" id="61" value="" /></td>
+                            <td><input type="text" id="62" value="" /></td>
+                            <td><input type="text" id="63" value="" /></td>
+                            <td><input type="text" id="64" value="" /></td>
+                            <td><input type="text" id="65" value="" /></td>
+                            <td><input type="text" id="66" value="" /></td>
+                            <td><input type="text" id="67" value="" /></td>
+                            <td><input type="text" id="68" value="" /></td>
+                        </tr>
+
+                        <tr id="row">
+                            <td><input type="text" id="70" value="" /></td>
+                            <td><input type="text" id="71" value="" /></td>
+                            <td><input type="text" id="72" value="" /></td>
+                            <td><input type="text" id="73" value="" /></td>
+                            <td><input type="text" id="74" value="" /></td>
+                            <td><input type="text" id="75" value="" /></td>
+                            <td><input type="text" id="76" value="" /></td>
+                            <td><input type="text" id="77" value="" /></td>
+                            <td><input type="text" id="78" value="" /></td>
+                        </tr>
+
+                        <tr id="row">
+                            <td><input type="text" id="80" value="" /></td>
+                            <td><input type="text" id="81" value="" /></td>
+                            <td><input type="text" id="82" value="" /></td>
+                            <td><input type="text" id="83" value="" /></td>
+                            <td><input type="text" id="84" value="" /></td>
+                            <td><input type="text" id="85" value="" /></td>
+                            <td><input type="text" id="86" value="" /></td>
+                            <td><input type="text" id="87" value="" /></td>
+                            <td><input type="text" id="88" value="" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>
+                <input
+                    type="button"
+                    value="Solve"
+                    id="solveButton"
+                    onclick="solve()"
+                />
+                <!-- <input
+                    type="button"
+                    value="Lock"
+                    id="lockButton"
+                    onclick="lock()"
+                /> -->
+            </p>
+            <script src="./script.js"></script>
+        </div>
+    </body>
 </html>
