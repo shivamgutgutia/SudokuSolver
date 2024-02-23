@@ -48,11 +48,10 @@ td:nth-child(n + 18),
 .grid-separator:nth-child(n + 18) {
     border-bottom: 2px solid #ddd;
 }
-
-td:focus,
+/* td:focus,
 td:hover {
     background-color: #eee;
-}
+} */
 
 input[type="text"] {
     width: 100%;
